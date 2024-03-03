@@ -15,6 +15,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initSPI();
+        initAutoSpi();
+    }
+
+    /**
+     * AutoService创建SPI
+     */
+    private void initAutoSpi() {
+        Log.d(TAG, "initAutoSpi: ");
+        ServiceLoader<PyzAutoSpi> serviceLoader = ServiceLoader.load(PyzAutoSpi.class);
+        for (PyzAutoSpi pyzSpi : serviceLoader) {
+            pyzSpi.onCreate();
+        }
     }
 
     /**
