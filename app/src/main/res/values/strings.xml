@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">spi</string>
+    <string name="spi">SPI!</string>
 </resources>
